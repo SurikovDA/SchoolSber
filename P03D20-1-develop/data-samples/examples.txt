@@ -1,0 +1,13 @@
+x*x
+x
+sin(x)
+x*x*x
+x+x*x
+1/x
+tan(x)
+x*sin(x)
+sin(sin(sin(sin(1/ln(x*x)))))
+1
+-1
+-x*2
+sqrt(-(1/(-x*x)))

@@ -1,0 +1,27 @@
+# A makefile consists of targets and commands that need to be executed to reach the target.
+
+# Let's write a simple Makefile for the project, which consists of the following files: main.c, math.c, math.h, console_gui.c, console_gui.h, common_structures.h
+
+# "all" is the default target unless otherwise specified. After ":" we specified dependencies for "all" target. In our case it's target "build"
+# It means that make utility will run every targets to achieve the "build" target on which "all" depends
+all: build
+
+# "Build" target depends on main.o math.o console_gui.o and build the final executable file of the app
+build: main.o math.o console_gui.o
+    gcc main.o math.o console_gui.o -o main
+
+# "main.o" target depends on main.c
+main.o: main.c
+    gcc -c main.c
+
+# "console_gui.o" target depends on console_gui.c
+console_gui.o: console_gui.c
+    gcc -c console_gui.c
+
+# "math.o" target depends on math.c
+math.o: math.c
+    gcc -c math.c
+
+# "clean" target tells make utility to clean all of the objects files
+clean:
+    rm -rf *.o main
